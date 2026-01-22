@@ -46,42 +46,6 @@ Legitimate emails
 
 Email text and subject lines used as features
 
-📁 Project Structure
-
-phishing-detector/
-│
-├── README.md                      # This file
-├── requirements.txt               # Python dependencies
-├── QUICKSTART.md                 # Quick setup guide
-│
-├── generate_dataset.py           # Creates email dataset
-├── dataset.csv                   # Generated email samples
-│
-├── train_model_enhanced.py       # Enhanced multi-model training
-├── visualizations_enhanced.py    # Comprehensive visualizations
-│
-├── cli_predictor.py              # Command-line interface
-├── gui_predictor.py              # Graphical user interface
-│
-├── models/                       # Saved models (auto-created)
-│   ├── vectorizer.pkl
-│   ├── naive_bayes_model.pkl
-│   ├── logistic_regression_model.pkl
-│   ├── decision_tree_model.pkl
-│   ├── random_forest_model.pkl
-│   ├── best_model.pkl
-│   └── test_data.pkl
-│
-├── outputs/                      # Visualizations (auto-created)
-│   ├── model_comparison.png
-│   ├── confusion_matrices_all.png
-│   ├── wordclouds_comparison.png
-│   ├── feature_importance_top20.png
-│   ├── cross_validation_comparison.png
-│   └── comprehensive_dashboard.png
-│
-└── reports/                      # Evaluation reports (auto-created)
-    └── evaluation_report.txt
 
 🚀 Installation
 Prerequisites
