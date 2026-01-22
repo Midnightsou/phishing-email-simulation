@@ -1,132 +1,224 @@
-Phishing Email Detection Simulation Using Machine Learning
-📖 Overview
-This project simulates a machine learning workflow for cybersecurity, specifically focusing on the detection of phishing emails. By analyzing email content and subject lines, the system classifies messages into two categories: Phishing and Legitimate.
+🛡️ Phishing Email Detection System
 
-Designed for educational and research purposes, this project demonstrates the end-to-end process of dataset creation, feature extraction (TF-IDF), model training (Naive Bayes), and evaluation. It includes both a Command Line Interface (CLI) and a Graphical User Interface (GUI) for real-time predictions.
+A machine learning–based system that simulates phishing email detection using Naive Bayes classification and TF-IDF feature extraction.
 
-🎯 Objectives
-Dataset Creation: Generate a labeled dataset of phishing and legitimate emails.
 
-Model Training: Train a machine learning model using Natural Language Processing (NLP) techniques.
+🎯 Overview
 
-Simulation: Mimic real-world phishing detection scenarios.
+This project demonstrates how machine learning can be used to detect phishing emails by analyzing email subject lines and message content. It provides a simple but effective simulation of how automated phishing detection systems work in real-world cybersecurity applications.
 
-Evaluation: Assess performance using Accuracy, Precision, Recall, and F1-Score.
+Objectives
 
-Interactivity: Provide tools (CLI & GUI) for user interaction and testing.
+Create a labeled dataset of phishing and legitimate emails
 
-🛠 Technologies Used
-The project is built using Python and the following libraries:
+Train a machine learning classifier for phishing detection
 
-Core: Python, NumPy, Pandas
+Extract textual features using TF-IDF
 
-Machine Learning & NLP: scikit-learn
+Evaluate model performance using accuracy metrics
 
-Visualization: Matplotlib, Seaborn
+Simulate phishing detection through user input
 
-GUI: Tkinter (standard Python GUI)
+✨ Features
+Core Features
 
-📂 Project Structure
-Plaintext
+Machine Learning–Based Detection using Naive Bayes
 
+TF-IDF Feature Extraction for text analysis
+
+Binary Classification (Phishing vs Legitimate)
+
+Command-Line Prediction Tool
+
+Simple GUI Prediction Interface
+
+Accuracy Evaluation and Reporting
+
+Dataset
+
+Small labeled dataset of email samples
+
+Two classes:
+
+Phishing emails
+
+Legitimate emails
+
+Email text and subject lines used as features
+
+📁 Project Structure
 phishing-email-simulation/
 │
-├── dataset.csv              # Generated email dataset
-├── generate_dataset.py      # Script to generate synthetic data
-├── train_model.py           # Script to train and save the ML model
-├── cli_predictor.py         # Command-line tool for prediction
-├── gui_predictor.py         # Graphical interface for prediction
-├── visualizations.py        # Script to generate performance charts
-├── requirements.txt         # Python dependencies
-├── models/                  # Directory for saved .pkl models
-└── outputs/                 # Directory for results and graphs
-🚀 Installation
-1. Clone the Repository
-Bash
+├── README.md                  # Project documentation
+├── requirements.txt           # Python dependencies
+│
+├── dataset.csv                # Email dataset
+├── generate_dataset.py        # Dataset generation script
+│
+├── train_model.py             # Model training script
+│
+├── cli_predictor.py           # Command-line prediction tool
+├── gui_predictor.py           # GUI-based prediction tool
+│
+├── models/                    # Saved model files
+│   ├── vectorizer.pkl
+│   └── phishing_model.pkl
+│
+└── outputs/                   # Evaluation results and charts
 
+🚀 Installation
+Prerequisites
+
+Python 3.8 or higher
+
+pip package manager
+
+Step 1: Clone the Repository
 git clone https://github.com/Midnightsou/phishing-email-simulation.git
 cd phishing-email-simulation
-2. Install Dependencies
-Ensure you have Python installed, then install the required packages:
 
-Bash
-
+Step 2: Install Dependencies
 pip install -r requirements.txt
+
+
+Main Dependencies
+
+pandas
+
+scikit-learn
+
+numpy
+
+matplotlib
+
 💻 Usage
-Follow these steps to run the simulation from start to finish.
-
-Step 1: Generate Dataset
-Create the synthetic dataset of emails.
-
-Bash
-
+Complete Workflow
+1. Generate the Dataset
 python generate_dataset.py
-Step 2: Train the Model
-Train the Naive Bayes classifier on the generated dataset.
 
-Bash
 
+Creates dataset.csv containing labeled email samples.
+
+2. Train the Model
 python train_model.py
-Step 3: Run Predictions
-You can test the model using either the command line or the GUI.
 
-Option A: CLI Mode
 
-Bash
+This will:
+
+Load the dataset
+
+Convert text data to TF-IDF vectors
+
+Train a Naive Bayes classifier
+
+Evaluate accuracy
+
+Save the trained model and vectorizer
+
+3. Test the System
+
+Command-Line Interface
 
 python cli_predictor.py
-Option B: GUI Mode
 
-Bash
+
+Enter custom email text
+
+Receive phishing or legitimate prediction
+
+Graphical Interface
 
 python gui_predictor.py
-Step 4: Visualize Results
-Generate confusion matrices and performance graphs.
 
-Bash
 
-python visualizations.py
-🧠 Machine Learning Approach
+Simple GUI for non-technical users
+
+Displays prediction result clearly
+
+🔬 Models & Methodology
 Feature Extraction
-Text Preprocessing: Tokenization and stop-word removal.
 
-Vectorization: Uses TF-IDF (Term Frequency-Inverse Document Frequency) to convert text data into numerical vectors.
+TF-IDF (Term Frequency–Inverse Document Frequency)
 
-Algorithm
-Naive Bayes Classifier: Selected for its efficiency and effectiveness in text classification tasks.
+Converts email text into numerical feature vectors
 
-Evaluation Metrics
-The model is evaluated based on:
+Reduces importance of common words
 
-Accuracy
+Highlights distinctive phishing-related terms
 
-Precision
+Machine Learning Model
+Naive Bayes (MultinomialNB)
 
-Recall
+Suitable for text classification problems
 
-F1-Score
+Fast and lightweight
+
+Performs well with TF-IDF features
+
+Used as the primary classifier in this project
+
+Evaluation Metric
+
+Accuracy: Measures overall correctness of predictions
 
 📊 Results
-The system successfully distinguishes between phishing and legitimate emails with high accuracy. While results depend on the dataset size and variety, the visualizations generated in the outputs/ folder provide a detailed breakdown of model performance.
 
-🔮 Roadmap & Limitations
-Limitations
-Dataset: Currently relies on a small, synthetic dataset.
+The trained model successfully classifies phishing and legitimate emails.
 
-Features: Limited to text-based features (body/subject) without analyzing headers.
+Accuracy demonstrates that even simple machine learning techniques can effectively detect phishing patterns.
 
-Integration: Not connected to live email servers (IMAP/SMTP).
+Performance depends on dataset size and diversity.
 
-Future Improvements
-[ ] Integrate a larger, real-world dataset (e.g., Enron or PhishTank).
+Sample Output
 
-[ ] Implement advanced NLP models (BERT, LSTM).
+Model Accuracy: 95%
+Prediction: Phishing Email
 
-[ ] Add URL and domain reputation analysis.
+📈 Visualization
 
-[ ] Analyze email headers for spoofing.
+Basic evaluation results are displayed during training
 
-[ ] Develop a web-based API (FastAPI/Flask).
+Optional charts can be generated using matplotlib
+
+Output files are saved in the outputs/ directory
+
+🔮 Future Improvements
+
+Expand dataset size for better generalization
+
+Add URL and domain analysis
+
+Detect HTML-based phishing content
+
+Train and compare multiple models
+
+Integrate deep learning models (LSTM, BERT)
+
+Deploy as a web API or browser extension
+
+Integrate with real email systems
+
+🤝 Contributing
+
+Contributions are welcome. You may:
+
+Improve dataset quality
+
+Add new phishing patterns
+
+Enhance model evaluation
+
+Improve UI/UX
+
+Optimize performance
 
 📄 License
-This project is intended for educational purposes only.
+
+This project is intended for educational and research purposes.
+
+👤 Author
+
+Developed as a cybersecurity and machine learning simulation project.
+
+Last Updated: January 2025
+Version: 1.0
