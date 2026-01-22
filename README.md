@@ -47,24 +47,41 @@ Legitimate emails
 Email text and subject lines used as features
 
 📁 Project Structure
-phishing-email-simulation/
+
+phishing-detector/
 │
-├── README.md                  # Project documentation
-├── requirements.txt           # Python dependencies
+├── README.md                      # This file
+├── requirements.txt               # Python dependencies
+├── QUICKSTART.md                 # Quick setup guide
 │
-├── dataset.csv                # Email dataset
-├── generate_dataset.py        # Dataset generation script
+├── generate_dataset.py           # Creates email dataset
+├── dataset.csv                   # Generated email samples
 │
-├── train_model.py             # Model training script
+├── train_model_enhanced.py       # Enhanced multi-model training
+├── visualizations_enhanced.py    # Comprehensive visualizations
 │
-├── cli_predictor.py           # Command-line prediction tool
-├── gui_predictor.py           # GUI-based prediction tool
+├── cli_predictor.py              # Command-line interface
+├── gui_predictor.py              # Graphical user interface
 │
-├── models/                    # Saved model files
+├── models/                       # Saved models (auto-created)
 │   ├── vectorizer.pkl
-│   └── phishing_model.pkl
+│   ├── naive_bayes_model.pkl
+│   ├── logistic_regression_model.pkl
+│   ├── decision_tree_model.pkl
+│   ├── random_forest_model.pkl
+│   ├── best_model.pkl
+│   └── test_data.pkl
 │
-└── outputs/                   # Evaluation results and charts
+├── outputs/                      # Visualizations (auto-created)
+│   ├── model_comparison.png
+│   ├── confusion_matrices_all.png
+│   ├── wordclouds_comparison.png
+│   ├── feature_importance_top20.png
+│   ├── cross_validation_comparison.png
+│   └── comprehensive_dashboard.png
+│
+└── reports/                      # Evaluation reports (auto-created)
+    └── evaluation_report.txt
 
 🚀 Installation
 Prerequisites
@@ -83,13 +100,13 @@ pip install -r requirements.txt
 
 Main Dependencies
 
-pandas
+-pandas
 
-scikit-learn
+-scikit-learn
 
-numpy
+-numpy
 
-matplotlib
+-matplotlib
 
 💻 Usage
 Complete Workflow
